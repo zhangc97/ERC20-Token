@@ -8,7 +8,7 @@ contract TestMyToken {
   TokenFromScratch3 private _myToken;
   address private _owner;
 
-  function TestMyToken() public {
+  constructor() TestMyToken() public {
     _owner = msg.sender;
   }
 

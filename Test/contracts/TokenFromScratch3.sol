@@ -1,6 +1,7 @@
 pragma solidity ^0.4.18;
 
 import "./ERCReceivingContract.sol";
+import "./Token.sol";
 
 interface ERC20 {
 		function totalSupply() external constant returns (uint);
@@ -24,29 +25,22 @@ library Addresses {
   }
 }
 
-contract TokenFromScratch3 is ERC20 {
-	string public symbol = "TFS";
-	string public name = "Token From Scratch2";
-	uint8 internal decimals = 0;
-	uint256 _totalSupply = 10000;
-	mapping (address => uint256) public _balanceOf;
-	mapping (address => mapping (address => uint256)) public _allowances;
+contract TokenFromScratch3 is Token("TokenFromScratch3", "TFS", 0, 10000), ERC20 {
+
 	using Addresses for address;
 
-	function TokenFromScratch3() public {
-	    _balanceOf[msg.sender] = _totalSupply;
+	constructor() TokenFromScratch3() public {
+	    _balanceOf[msg.sender] = _totalsupply;
 
 	}
 
 	function totalSupply() external constant returns (uint) {
-		return _totalSupply;
+		return _totalsupply;
 	}
 
 	function balanceOf(address _addr) external constant returns (uint) {
 		return _balanceOf[_addr];
 	}
-
-
 
 	function transfer(address _to, uint tokens, bytes _data) internal returns (bool) {
 		if (tokens > 0 && tokens <= _balanceOf[msg.sender]) {
