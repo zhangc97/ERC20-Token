@@ -48,12 +48,12 @@ contract CrowdSale is ERCReceivingContract { //need ERC223 to notify when the co
 
 
 
-  function CrowdSale(address token, uint _deadline, uint price, uint limit, address wallet) public {
-      _token = Token(token);
-      _start = start;
-      _end = end;
-      _price = price;
-      _limit = limit;
+  function CrowdSale(address token, uint deadline, uint price, uint limit, address wallet) public {
+      _token = Token(token); //setting address tokens are coming from
+      _deadline = deadline; //setting deadline time
+      _price = price; //setting price in wei per token
+      _limit = limit; //setting cap
+      _wallet = wallet; //setting address the money will be sent to after time is done
   }
 
   function() public isOver() payable {
@@ -74,7 +74,7 @@ contract CrowdSale is ERCReceivingContract { //need ERC223 to notify when the co
   function buyFor(address beneficiary) public available() valid(beneficiary, msg.value) payable {
     require(beneficiary != address(0));
     require(msg.value != 0);
-    uint amount = msg.value/_price;
+    uint amount = msg.value.div(_price);
     _token.transfer(beneficiary,amount);
     _limits[beneficiary] = _limits[beneficiary].add(amount);
     _available = _available.sub(amount);
