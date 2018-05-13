@@ -27,13 +27,17 @@ contract Crowdsale { //need ERC223 to notify when the contract recieves Tokens
     require(msg.sender == address(_token));
     _;
   }
-  //modifier onlyWhileOpen {
+  modifier onlyWhileOpen {
     // solium-disable-next-line security/no-block-members
-  //  require(block.timestamp >= _openingTime && block.timestamp <= _closingTime);
-  //  _;
-  //}
+    if (!isOwner()) {
+      require(block.timestamp >= _start);
+      _;
+    } else {
+      _;
+    }
+  }
 
-  function Crowdsale(uint256 price, address wallet, TokenFromScratch3 token) public {
+  function Crowdsale(uint256 openingtime, uint256 closingtime, uint256 price, address wallet, TokenFromScratch3 token) public {
       require(price > 0);
       require(wallet != address(0));
       require(token != address(0));
@@ -42,8 +46,8 @@ contract Crowdsale { //need ERC223 to notify when the contract recieves Tokens
       _price = price; //setting price in wei per token
       //_limit = limit; //setting cap
       _wallet = wallet; //setting address the money will be sent to after time is done
-      //_start = openingtime;
-      //_end = closingtime;
+      _start = openingtime;
+      _end = closingtime;
   }
 
   function() external payable {
@@ -54,24 +58,35 @@ contract Crowdsale { //need ERC223 to notify when the contract recieves Tokens
    return block.timestamp > _end;
   }
 
+  function hasOpened() public view returns (bool) {
+    return block.timestamp >= _start;
+  }
+
+  function isOwner() public view returns (bool) {
+    return msg.sender == address(_token);
+  }
+
 
   function availableBalance() external view returns(uint) {
       return _available;
   }
 
 
-  function buyFor(address beneficiary) public /*available() valid(beneficiary, msg.value)*/ payable {
+  function buyFor(address beneficiary) public onlyWhileOpen() payable {
     //require(beneficiary != address(0));
     //require(msg.value != 0);
-    uint256 weiamount = msg.value;
-    uint256 amount = weiamount.div(_price);
-    _raised = _raised.add(amount);
-    _token.transfer(beneficiary,amount);
+    if (!hasClosed()){
+      uint256 weiamount = msg.value;
+      uint256 amount = weiamount.div(_price);
+      _raised = _raised.add(amount);
+      _token.transfer(beneficiary,amount);
     //_contributions[beneficiary] = _contributions[beneficiary].add(amount);
     //_available = _available.sub(amount);
-    _forwardFunds();
-
-    emit TokenPurchase(msg.sender,beneficiary,weiamount,amount);
+      _forwardFunds();
+      emit TokenPurchase(msg.sender,beneficiary,weiamount,amount);
+    } else {
+      revert();
+    }
   }
 
   function _forwardFunds() internal {
