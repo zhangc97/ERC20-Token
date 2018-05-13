@@ -34,14 +34,14 @@
     "absolutePath": "/Users/chrayzhang/Desktop/ICOTest/contracts/ERCReceivingContract.sol",
     "exportedSymbols": {
       "ERCReceivingContract": [
-        204
+        209
       ]
     },
-    "id": 205,
+    "id": 210,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 194,
+        "id": 199,
         "literals": [
           "solidity",
           "^",
@@ -57,9 +57,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 204,
+        "id": 209,
         "linearizedBaseContracts": [
-          204
+          209
         ],
         "name": "ERCReceivingContract",
         "nodeType": "ContractDefinition",
@@ -67,7 +67,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 203,
+            "id": 208,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -75,15 +75,15 @@
             "name": "tokenFallback",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 201,
+              "id": 206,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 196,
+                  "id": 201,
                   "name": "_from",
                   "nodeType": "VariableDeclaration",
-                  "scope": 203,
+                  "scope": 208,
                   "src": "85:13:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -92,7 +92,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 195,
+                    "id": 200,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "85:7:1",
@@ -106,10 +106,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 198,
+                  "id": 203,
                   "name": "_value",
                   "nodeType": "VariableDeclaration",
-                  "scope": 203,
+                  "scope": 208,
                   "src": "100:11:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -118,7 +118,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 197,
+                    "id": 202,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "100:4:1",
@@ -132,10 +132,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 200,
+                  "id": 205,
                   "name": "_data",
                   "nodeType": "VariableDeclaration",
-                  "scope": 203,
+                  "scope": 208,
                   "src": "113:11:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -144,7 +144,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 199,
+                    "id": 204,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "113:5:1",
@@ -161,19 +161,19 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 202,
+              "id": 207,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "134:0:1"
             },
-            "scope": 204,
+            "scope": 209,
             "src": "62:73:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 205,
+        "scope": 210,
         "src": "26:111:1"
       }
     ],
@@ -183,14 +183,14 @@
     "absolutePath": "/Users/chrayzhang/Desktop/ICOTest/contracts/ERCReceivingContract.sol",
     "exportedSymbols": {
       "ERCReceivingContract": [
-        204
+        209
       ]
     },
-    "id": 205,
+    "id": 210,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 194,
+        "id": 199,
         "literals": [
           "solidity",
           "^",
@@ -206,9 +206,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 204,
+        "id": 209,
         "linearizedBaseContracts": [
-          204
+          209
         ],
         "name": "ERCReceivingContract",
         "nodeType": "ContractDefinition",
@@ -216,7 +216,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 203,
+            "id": 208,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -224,15 +224,15 @@
             "name": "tokenFallback",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 201,
+              "id": 206,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 196,
+                  "id": 201,
                   "name": "_from",
                   "nodeType": "VariableDeclaration",
-                  "scope": 203,
+                  "scope": 208,
                   "src": "85:13:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -241,7 +241,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 195,
+                    "id": 200,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "85:7:1",
@@ -255,10 +255,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 198,
+                  "id": 203,
                   "name": "_value",
                   "nodeType": "VariableDeclaration",
-                  "scope": 203,
+                  "scope": 208,
                   "src": "100:11:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -267,7 +267,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 197,
+                    "id": 202,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "100:4:1",
@@ -281,10 +281,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 200,
+                  "id": 205,
                   "name": "_data",
                   "nodeType": "VariableDeclaration",
-                  "scope": 203,
+                  "scope": 208,
                   "src": "113:11:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -293,7 +293,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 199,
+                    "id": 204,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "113:5:1",
@@ -310,19 +310,19 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 202,
+              "id": 207,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "134:0:1"
             },
-            "scope": 204,
+            "scope": 209,
             "src": "62:73:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 205,
+        "scope": 210,
         "src": "26:111:1"
       }
     ],
@@ -334,5 +334,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.0",
-  "updatedAt": "2018-05-12T02:28:05.932Z"
+  "updatedAt": "2018-05-13T03:59:43.633Z"
 }
